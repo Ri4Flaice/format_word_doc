@@ -1,5 +1,5 @@
-﻿using System.Windows;
-using System;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 
@@ -73,7 +73,7 @@ namespace format_word_doc.UserControls
 
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
