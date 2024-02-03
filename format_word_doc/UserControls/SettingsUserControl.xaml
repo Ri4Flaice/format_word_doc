@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="format_word_doc.UserControls.SettingsUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:format_word_doc.UserControls"
+             mc:Ignorable="d" Background="White"
+             d:DesignHeight="350" d:DesignWidth="450">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
+                    <TextBox Name="ministryEducationTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
+                    <TextBox Name="organizationTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
+                    <TextBox Name="facultyTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,10" >
+                    <TextBox Name="departmentTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
+                    <TextBox Name="themeTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
+                    <TextBox Name="nameStudentTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
+                    <TextBox Name="completedTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
+                    <TextBox Name="groupTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
+                    <TextBox Name="cityTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
+                    <TextBox Name="nameTeacherTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
+                    <TextBox Name="checkedTeacherTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
+                    <TextBox Name="postTeacherTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                </StackPanel>
+
+                <Button Name="SaveBtn" Height="30" Width="110" Margin="0,0,10,10" Cursor="Hand"
+                    Style="{StaticResource RoundButtonSaveSettingsWindow}" Click="SaveBtn_Click"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

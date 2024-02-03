@@ -38,7 +38,11 @@ namespace format_word_doc.UserControls
 
         private void SettingsBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+            Window parentWindow = Window.GetWindow(this);
+            SettingsWindow settingsWindow = new SettingsWindow(parentWindow);
+            Opacity = 0.4;
+            settingsWindow.ShowDialog();
+            Opacity = 1;
         }
 
         private void SelectAllCheckBox_Checked(object sender, RoutedEventArgs e)

@@ -8,5 +8,22 @@
             <Setter Property="TextElement.FontFamily" Value="/Fonts/#RobotoFlex">
             </Setter>
         </Style>
+
+        <Style x:Key="RoundButtonSaveSettingsWindow" TargetType="Button">
+            <Setter Property="Background" Value="#1be03e"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="TextElement.FontFamily" Value="/Fonts/#RobotoFlex"></Setter>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Content" Value="Сохранить"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Black">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>
