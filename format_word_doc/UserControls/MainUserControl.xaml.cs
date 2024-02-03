@@ -1,5 +1,7 @@
 ﻿using format_word_doc.Properties;
 using format_word_doc.src.Elements;
+using format_word_doc.WordDoc;
+using format_word_doc.WordDoc.CreateDocument;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,9 +12,13 @@ namespace format_word_doc.UserControls
     public partial class MainUserControl : UserControl
     {
         private bool _isMenuOpen = false;
+        private CreateDoc _createDoc;
+        private FormatDocument _formatDocument;
         public MainUserControl()
         {
             InitializeComponent();
+            _createDoc = new CreateDoc();
+            _formatDocument = new FormatDocument();
         }
 
         private void OpenClosedMenuBtn_Click(object sender, RoutedEventArgs e)
@@ -48,7 +54,8 @@ namespace format_word_doc.UserControls
         }
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+            _createDoc.CreateDocument();
+            _formatDocument.Formatting();
         }
 
         private void SelectAllCheckBox_Checked(object sender, RoutedEventArgs e)
