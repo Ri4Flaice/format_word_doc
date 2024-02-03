@@ -10,40 +10,52 @@
         <Grid>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                 <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
-                    <TextBox Name="ministryEducationTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                    <TextBox Name="ministryEducationTextBox" TextWrapping="Wrap" Width="400" FontSize="16"
+                             TextChanged="ministryEducationTextBox_TextChanged"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
-                    <TextBox Name="organizationTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                    <TextBox Name="organizationTextBox" TextWrapping="Wrap" Width="400" FontSize="16"
+                             TextChanged="organizationTextBox_TextChanged"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
-                    <TextBox Name="facultyTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                    <TextBox Name="facultyTextBox" TextWrapping="Wrap" Width="400" FontSize="16"
+                             TextChanged="facultyTextBox_TextChanged"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,5,0,10" >
-                    <TextBox Name="departmentTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                    <TextBox Name="departmentTextBox" TextWrapping="Wrap" Width="400" FontSize="16"
+                             TextChanged="departmentTextBox_TextChanged"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
-                    <TextBox Name="themeTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                    <TextBox Name="themeTextBox" TextWrapping="Wrap" Width="400" FontSize="16"
+                             TextChanged="themeTextBox_TextChanged"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
-                    <TextBox Name="nameStudentTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                    <TextBox Name="nameStudentTextBox" TextWrapping="Wrap" Width="400" FontSize="16"
+                             TextChanged="nameStudentTextBox_TextChanged"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
-                    <TextBox Name="completedTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                    <TextBox Name="completedTextBox" TextWrapping="Wrap" Width="400" FontSize="16"
+                             TextChanged="completedTextBox_TextChanged"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
-                    <TextBox Name="groupTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                    <TextBox Name="groupTextBox" TextWrapping="Wrap" Width="400" FontSize="16"
+                             TextChanged="groupTextBox_TextChanged"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
-                    <TextBox Name="cityTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                    <TextBox Name="cityTextBox" TextWrapping="Wrap" Width="400" FontSize="16"
+                             TextChanged="cityTextBox_TextChanged"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
-                    <TextBox Name="nameTeacherTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                    <TextBox Name="nameTeacherTextBox" TextWrapping="Wrap" Width="400" FontSize="16"
+                             TextChanged="nameTeacherTextBox_TextChanged"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
-                    <TextBox Name="checkedTeacherTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                    <TextBox Name="checkedTeacherTextBox" TextWrapping="Wrap" Width="400" FontSize="16"
+                             TextChanged="checkedTeacherTextBox_TextChanged"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,5,0,10">
-                    <TextBox Name="postTeacherTextBox" TextWrapping="Wrap" Width="400" FontSize="16"/>
+                    <TextBox Name="postTeacherTextBox" TextWrapping="Wrap" Width="400" FontSize="16"
+                             TextChanged="postTeacherTextBox_TextChanged"/>
                 </StackPanel>
 
                 <Button Name="SaveBtn" Height="30" Width="110" Margin="0,0,10,10" Cursor="Hand"

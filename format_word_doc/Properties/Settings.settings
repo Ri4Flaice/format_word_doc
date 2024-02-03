@@ -1,7 +1,42 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="format_word_doc.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MinistryEducation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Название Министерство образования</Value>
+    </Setting>
+    <Setting Name="Organization" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Название университета</Value>
+    </Setting>
+    <Setting Name="Faculty" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Название факультета</Value>
+    </Setting>
+    <Setting Name="Department" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Название кафедры</Value>
+    </Setting>
+    <Setting Name="Theme" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Тема</Value>
+    </Setting>
+    <Setting Name="Student" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ФИО</Value>
+    </Setting>
+    <Setting Name="Completed" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Выполнил студент</Value>
+    </Setting>
+    <Setting Name="Group" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Название группы</Value>
+    </Setting>
+    <Setting Name="City" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Город</Value>
+    </Setting>
+    <Setting Name="Teacher" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ФИО</Value>
+    </Setting>
+    <Setting Name="Post" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Руководитель</Value>
+    </Setting>
+    <Setting Name="Checked" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Проверил</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

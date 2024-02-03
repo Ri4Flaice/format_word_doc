@@ -8,22 +8,162 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace format_word_doc.Properties
-{
-
-
+namespace format_word_doc.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.8.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Название Министерство образования")]
+        public string MinistryEducation {
+            get {
+                return ((string)(this["MinistryEducation"]));
+            }
+            set {
+                this["MinistryEducation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Название университета")]
+        public string Organization {
+            get {
+                return ((string)(this["Organization"]));
+            }
+            set {
+                this["Organization"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Название факультета")]
+        public string Faculty {
+            get {
+                return ((string)(this["Faculty"]));
+            }
+            set {
+                this["Faculty"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Название кафедры")]
+        public string Department {
+            get {
+                return ((string)(this["Department"]));
+            }
+            set {
+                this["Department"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Тема")]
+        public string Theme {
+            get {
+                return ((string)(this["Theme"]));
+            }
+            set {
+                this["Theme"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ФИО")]
+        public string Student {
+            get {
+                return ((string)(this["Student"]));
+            }
+            set {
+                this["Student"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Выполнил студент")]
+        public string Completed {
+            get {
+                return ((string)(this["Completed"]));
+            }
+            set {
+                this["Completed"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Название группы")]
+        public string Group {
+            get {
+                return ((string)(this["Group"]));
+            }
+            set {
+                this["Group"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Город")]
+        public string City {
+            get {
+                return ((string)(this["City"]));
+            }
+            set {
+                this["City"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ФИО")]
+        public string Teacher {
+            get {
+                return ((string)(this["Teacher"]));
+            }
+            set {
+                this["Teacher"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Руководитель")]
+        public string Post {
+            get {
+                return ((string)(this["Post"]));
+            }
+            set {
+                this["Post"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Проверил")]
+        public string Checked {
+            get {
+                return ((string)(this["Checked"]));
+            }
+            set {
+                this["Checked"] = value;
             }
         }
     }
