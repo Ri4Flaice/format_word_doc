@@ -3,6 +3,7 @@ using format_word_doc.src.Elements;
 using System.Windows;
 using System;
 using System.Windows.Controls;
+using format_word_doc.HandleException;
 
 namespace format_word_doc.UserControls
 {
@@ -70,7 +71,7 @@ namespace format_word_doc.UserControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                new ExceptionHandler(ex);
             }
         }
 
@@ -85,7 +86,7 @@ namespace format_word_doc.UserControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                new ExceptionHandler(ex);
             }
         }
 

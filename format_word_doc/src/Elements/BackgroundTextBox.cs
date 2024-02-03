@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using format_word_doc.HandleException;
+using System;
+using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace format_word_doc.src.Elements
@@ -7,28 +9,35 @@ namespace format_word_doc.src.Elements
     {
         public void SetTextBoxPlaceholder(TextBox textBox, string placeholderText)
         {
-            textBox.Background = new VisualBrush()
+            try
             {
-                Visual = new Label() { Content = placeholderText, Foreground = Brushes.Gray },
-                Opacity = 0.6,
-                Stretch = Stretch.None,
-                AlignmentX = AlignmentX.Left,
-                AlignmentY = AlignmentY.Center
-            };
-            textBox.TextChanged += (s, e) =>
+                textBox.Background = new VisualBrush()
+                {
+                    Visual = new Label() { Content = placeholderText, Foreground = Brushes.Gray },
+                    Opacity = 0.6,
+                    Stretch = Stretch.None,
+                    AlignmentX = AlignmentX.Left,
+                    AlignmentY = AlignmentY.Center
+                };
+                textBox.TextChanged += (s, e) =>
+                {
+                    if (!string.IsNullOrEmpty(textBox.Text))
+                        textBox.Background = Brushes.Transparent;
+                    else
+                        textBox.Background = new VisualBrush()
+                        {
+                            Visual = new Label() { Content = placeholderText, Foreground = Brushes.Gray },
+                            Opacity = 0.6,
+                            Stretch = Stretch.None,
+                            AlignmentX = AlignmentX.Left,
+                            AlignmentY = AlignmentY.Center
+                        };
+                };
+            }
+            catch (Exception ex)
             {
-                if (!string.IsNullOrEmpty(textBox.Text))
-                    textBox.Background = Brushes.Transparent;
-                else
-                    textBox.Background = new VisualBrush()
-                    {
-                        Visual = new Label() { Content = placeholderText, Foreground = Brushes.Gray },
-                        Opacity = 0.6,
-                        Stretch = Stretch.None,
-                        AlignmentX = AlignmentX.Left,
-                        AlignmentY = AlignmentY.Center
-                    };
-            };
+                new ExceptionHandler(ex);
+            }
         }
     }
 }
