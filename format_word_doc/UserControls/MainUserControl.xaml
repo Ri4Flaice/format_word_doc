@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:format_word_doc.UserControls"
              mc:Ignorable="d" Background="White"
-             d:DesignHeight="400" d:DesignWidth="500">
+             d:DesignHeight="400" d:DesignWidth="600">
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -27,15 +27,33 @@
                     <CheckBox Name="SelectAllCheckBox" Content="Выбрать все" Margin="5" Checked="SelectAllCheckBox_Checked"
                           Unchecked="SelectAllCheckBox_Unchecked" Style="{StaticResource RobotoFlexFont}"
                           FontSize="14"/>
-                    <CheckBox Name="CopyTextCheckBox" Content="Перенести текст" Margin="5"/>
-                    <CheckBox Name="CreateTitlePageCheckBox" Content="Создать титульный лист" Margin="5"/>
-                    <CheckBox Name="ReplaceTitlePageCheckBox" Content="Загрузить данные в титульный лист" Margin="5"/>
-                    <CheckBox Name="CreateHeadingCheckBox" Content="Создание заголовков" Margin="5"/>
-                    <CheckBox Name="CreateAutoclavingCheckBox" Content="Создание автооглавления" Margin="5"/>
-                    <CheckBox Name="FormattingTextCheckBox" Content="Отформатирование текста" Margin="5"/>
-                    <CheckBox Name="FormattingPictureCheckBox" Content="Отформатирование рисунков" Margin="5"/>
-                    <CheckBox Name="PageNumberingCheckBox" Content="Добавление нумерации страниц" Margin="5"/>
-                    <CheckBox Name="SettingsFieldDocCheckBox" Content="Настройка полей документа" Margin="5"/>
+                    <CheckBox Name="CopyTextCheckBox" Content="Перенести текст" Margin="5" Checked="CopyTextCheckBox_Checked"
+                              Unchecked="CopyTextCheckBox_Unchecked" Style="{StaticResource RobotoFlexFont}"
+                              FontSize="14"/>
+                    <CheckBox Name="CreateTitlePageCheckBox" Content="Создать титульный лист" Margin="5" Checked="CreateTitlePageCheckBox_Checked"
+                              Unchecked="CreateTitlePageCheckBox_Unchecked" Style="{StaticResource RobotoFlexFont}"
+                              FontSize="14"/>
+                    <CheckBox Name="ReplaceTitlePageCheckBox" Content="Загрузить данные в титульный лист" Margin="5" Checked="ReplaceTitlePageCheckBox_Checked"
+                              Unchecked="ReplaceTitlePageCheckBox_Unchecked" Style="{StaticResource RobotoFlexFont}"
+                              FontSize="14"/>
+                    <CheckBox Name="CreateHeadingCheckBox" Content="Создание заголовков" Margin="5" Checked="CreateHeadingCheckBox_Checked"
+                              Unchecked="CreateHeadingCheckBox_Unchecked" Style="{StaticResource RobotoFlexFont}"
+                              FontSize="14"/>
+                    <CheckBox Name="CreateAutoclavingCheckBox" Content="Создание автооглавления" Margin="5" Checked="CreateAutoclavingCheckBox_Checked"
+                              Unchecked="CreateAutoclavingCheckBox_Unchecked" Style="{StaticResource RobotoFlexFont}"
+                              FontSize="14"/>
+                    <CheckBox Name="FormattingTextCheckBox" Content="Отформатирование текста" Margin="5" Checked="FormattingTextCheckBox_Checked"
+                              Unchecked="FormattingTextCheckBox_Unchecked" Style="{StaticResource RobotoFlexFont}"
+                              FontSize="14"/>
+                    <CheckBox Name="FormattingPictureCheckBox" Content="Отформатирование рисунков" Margin="5" Checked="FormattingPictureCheckBox_Checked"
+                              Unchecked="FormattingPictureCheckBox_Unchecked" Style="{StaticResource RobotoFlexFont}"
+                              FontSize="14"/>
+                    <CheckBox Name="PageNumberingCheckBox" Content="Добавление нумерации страниц" Margin="5" Checked="PageNumberingCheckBox_Checked"
+                              Unchecked="PageNumberingCheckBox_Unchecked" Style="{StaticResource RobotoFlexFont}"
+                              FontSize="14"/>
+                    <CheckBox Name="SettingsFieldDocCheckBox" Content="Настройка полей документа" Margin="5" Checked="SettingsFieldDocCheckBox_Checked"
+                              Unchecked="SettingsFieldDocCheckBox_Unchecked" Style="{StaticResource RobotoFlexFont}"
+                              FontSize="14"/>
 
                     <Button Name="SettingsBtn" Width="30" Height="30" Margin="5" Cursor="Hand" VerticalAlignment="Bottom"
                         HorizontalAlignment="Right" Click="SettingsBtn_Click">

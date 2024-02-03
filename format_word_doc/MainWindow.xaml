@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:format_word_doc"
         xmlns:mainUserControl="clr-namespace:format_word_doc.UserControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="500">
+        Title="MainWindow" Height="400" Width="600">
     <Grid>
         <mainUserControl:MainUserControl/>
     </Grid>

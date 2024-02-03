@@ -166,5 +166,113 @@ namespace format_word_doc.Properties {
                 this["Checked"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CopyTextCheckBox {
+            get {
+                return ((bool)(this["CopyTextCheckBox"]));
+            }
+            set {
+                this["CopyTextCheckBox"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CreateTitlePageCheckBox {
+            get {
+                return ((bool)(this["CreateTitlePageCheckBox"]));
+            }
+            set {
+                this["CreateTitlePageCheckBox"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ReplaceTitlePageCheckBox {
+            get {
+                return ((bool)(this["ReplaceTitlePageCheckBox"]));
+            }
+            set {
+                this["ReplaceTitlePageCheckBox"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CreateHeadingCheckBox {
+            get {
+                return ((bool)(this["CreateHeadingCheckBox"]));
+            }
+            set {
+                this["CreateHeadingCheckBox"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CreateAutoclavingCheckBox {
+            get {
+                return ((bool)(this["CreateAutoclavingCheckBox"]));
+            }
+            set {
+                this["CreateAutoclavingCheckBox"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FormattingTextCheckBox {
+            get {
+                return ((bool)(this["FormattingTextCheckBox"]));
+            }
+            set {
+                this["FormattingTextCheckBox"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FormattingPictureCheckBox {
+            get {
+                return ((bool)(this["FormattingPictureCheckBox"]));
+            }
+            set {
+                this["FormattingPictureCheckBox"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SettingsFieldDocCheckBox {
+            get {
+                return ((bool)(this["SettingsFieldDocCheckBox"]));
+            }
+            set {
+                this["SettingsFieldDocCheckBox"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool PageNumberingCheckBox {
+            get {
+                return ((bool)(this["PageNumberingCheckBox"]));
+            }
+            set {
+                this["PageNumberingCheckBox"] = value;
+            }
+        }
     }
 }
