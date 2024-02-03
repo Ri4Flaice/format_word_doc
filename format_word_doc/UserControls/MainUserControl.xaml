@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="format_word_doc.UserControls.MainUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:format_word_doc.UserControls"
+             mc:Ignorable="d" Background="White"
+             d:DesignHeight="400" d:DesignWidth="500">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="menuColumn" Width="40"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Name="MenuStackPanel" Orientation="Vertical">
+                <Button Name="OpenClosedMenuBtn" Height="40" Width="40" HorizontalAlignment="Left" 
+                    Background="Transparent" Cursor="Hand" Click="OpenClosedMenuBtn_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/Images/menu.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <StackPanel Name="elementsMenuStackPanel" Width="0" HorizontalAlignment="Left">
+                    <CheckBox Name="SelectAllCheckBox" Content="Выбрать все" Margin="5" Checked="SelectAllCheckBox_Checked"
+                          Unchecked="SelectAllCheckBox_Unchecked" Style="{StaticResource RobotoFlexFont}"
+                          FontSize="14"/>
+                    <CheckBox Name="CopyTextCheckBox" Content="Перенести текст" Margin="5"/>
+                    <CheckBox Name="CreateTitlePageCheckBox" Content="Создать титульный лист" Margin="5"/>
+                    <CheckBox Name="ReplaceTitlePageCheckBox" Content="Загрузить данные в титульный лист" Margin="5"/>
+                    <CheckBox Name="CreateHeadingCheckBox" Content="Создание заголовков" Margin="5"/>
+                    <CheckBox Name="CreateAutoclavingCheckBox" Content="Создание автооглавления" Margin="5"/>
+                    <CheckBox Name="FormattingTextCheckBox" Content="Отформатирование текста" Margin="5"/>
+                    <CheckBox Name="FormattingPictureCheckBox" Content="Отформатирование рисунков" Margin="5"/>
+                    <CheckBox Name="PageNumberingCheckBox" Content="Добавление нумерации страниц" Margin="5"/>
+                    <CheckBox Name="SettingsFieldDocCheckBox" Content="Настройка полей документа" Margin="5"/>
+
+                    <Button Name="SettingsBtn" Width="30" Height="30" Margin="5" Cursor="Hand" VerticalAlignment="Bottom"
+                        HorizontalAlignment="Right" Click="SettingsBtn_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="pack://application:,,,/Resources/Images/settings.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Name="StartBtn" Width="200" Height="200" Cursor="Hand" Background="Transparent" Click="StartBtn_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Ellipse Stroke="#12cad6" StrokeThickness="2" Fill="{TemplateBinding Background}"/>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Button.Content>
+                        <TextBlock Text="Старт" Style="{StaticResource RobotoFlexFont}" FontSize="14"/>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+
+            <Image Grid.Column="1" Name="imageCheckMark" Source="pack://application:,,,/Resources/Images/checkMark.png" Height="30" Width="30" 
+               HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Visibility="Hidden"/>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

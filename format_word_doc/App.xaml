@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:format_word_doc"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="RobotoFlexFont">
+            <Setter Property="TextElement.FontFamily" Value="/Fonts/#RobotoFlex">
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>
