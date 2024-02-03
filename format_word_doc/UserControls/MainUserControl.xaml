@@ -33,9 +33,6 @@
                     <CheckBox Name="CreateTitlePageCheckBox" Content="Создать титульный лист" Margin="5" Checked="CreateTitlePageCheckBox_Checked"
                               Unchecked="CreateTitlePageCheckBox_Unchecked" Style="{StaticResource RobotoFlexFont}"
                               FontSize="14"/>
-                    <CheckBox Name="ReplaceTitlePageCheckBox" Content="Загрузить данные в титульный лист" Margin="5" Checked="ReplaceTitlePageCheckBox_Checked"
-                              Unchecked="ReplaceTitlePageCheckBox_Unchecked" Style="{StaticResource RobotoFlexFont}"
-                              FontSize="14"/>
                     <CheckBox Name="CreateHeadingCheckBox" Content="Создание заголовков" Margin="5" Checked="CreateHeadingCheckBox_Checked"
                               Unchecked="CreateHeadingCheckBox_Unchecked" Style="{StaticResource RobotoFlexFont}"
                               FontSize="14"/>

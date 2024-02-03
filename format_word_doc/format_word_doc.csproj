@@ -68,6 +68,8 @@
     </Compile>
     <Compile Include="WordDoc\CreateDocument\CreateDoc.cs" />
     <Compile Include="WordDoc\FormatDocument.cs" />
+    <Compile Include="WordDoc\SettingsField\SettingDocField.cs" />
+    <Compile Include="WordDoc\TitlePage\WorkTitle.cs" />
     <Compile Include="WordManager\WordApplicationManager.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

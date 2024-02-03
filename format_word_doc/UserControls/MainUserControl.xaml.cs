@@ -72,7 +72,6 @@ namespace format_word_doc.UserControls
         {
             CopyTextCheckBox.IsChecked = isChecked;
             CreateTitlePageCheckBox.IsChecked = isChecked;
-            ReplaceTitlePageCheckBox.IsChecked = isChecked;
             CreateHeadingCheckBox.IsChecked = isChecked;
             CreateAutoclavingCheckBox.IsChecked = isChecked;
             FormattingTextCheckBox.IsChecked = isChecked;
@@ -82,7 +81,6 @@ namespace format_word_doc.UserControls
 
             Settings.Default.CopyTextCheckBox = isChecked;
             Settings.Default.CreateTitlePageCheckBox = isChecked;
-            Settings.Default.ReplaceTitlePageCheckBox = isChecked;
             Settings.Default.CreateHeadingCheckBox = isChecked;
             Settings.Default.CreateAutoclavingCheckBox = isChecked;
             Settings.Default.FormattingTextCheckBox = isChecked;
@@ -109,16 +107,6 @@ namespace format_word_doc.UserControls
         private void CreateTitlePageCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
             Settings.Default.CreateTitlePageCheckBox = false;
-        }
-
-        private void ReplaceTitlePageCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            Settings.Default.ReplaceTitlePageCheckBox = true;
-        }
-
-        private void ReplaceTitlePageCheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            Settings.Default.ReplaceTitlePageCheckBox = false;
         }
 
         private void CreateHeadingCheckBox_Checked(object sender, RoutedEventArgs e)

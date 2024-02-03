@@ -1,4 +1,7 @@
 ﻿using format_word_doc.HandleException;
+using format_word_doc.Properties;
+using format_word_doc.WordDoc.SettingsField;
+using format_word_doc.WordDoc.TitlePage;
 using format_word_doc.WordManager;
 using System;
 using Word = Microsoft.Office.Interop.Word;
@@ -7,6 +10,8 @@ namespace format_word_doc.WordDoc
 {
     internal class FormatDocument : WordApplicationManager
     {
+        private WorkTitle _workTitle = new WorkTitle();
+        private SettingDocField _settingDocField = new SettingDocField();
         public void Formatting()
         {
             try
@@ -22,6 +27,11 @@ namespace format_word_doc.WordDoc
                 titleDoc = wordApp.Documents.Open(titleDocPath);
                 sourceDoc = wordApp.Documents.Open(sourceDocPath);
                 resultDoc = wordApp.Documents.Open(resultDocPath);
+
+                if (Settings.Default.CreateTitlePageCheckBox) { _workTitle.CopyTitleOfTheTitleDoc(resultDoc, titleDocPath); _workTitle.ReplaceContentTitlePage(resultDoc); }
+                if (Settings.Default.SettingsFieldDocCheckBox) { _settingDocField.SettingUpDocumentFields(wordApp, resultDoc); }
+
+                resultDoc.Save();
             }
             catch (Exception ex)
             {
