@@ -2,7 +2,9 @@
 using format_word_doc.src.Elements;
 using format_word_doc.WordDoc;
 using format_word_doc.WordDoc.CreateDocument;
+using Microsoft.Toolkit.Uwp.Notifications;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -59,6 +61,14 @@ namespace format_word_doc.UserControls
             {
                 _createDoc.CreateDocument();
                 _formatDocument.Formatting();
+
+                Thread.Sleep(1500);
+
+                new ToastContentBuilder()
+                    .AddArgument("action", "viewConversation")
+                    .AddArgument("conversationId", 9813)
+                    .AddText("Formatting of the document is completed")
+                    .Show();
             });
         }
 

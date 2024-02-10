@@ -36,11 +36,12 @@ namespace format_word_doc.WordDoc.TitlePage
 
         public void ReplaceContentTitlePage(Word.Document resultDoc)
         {
+            var find = resultDoc.Content.Find;
+            find.ClearFormatting();
+            find.Replacement.ClearFormatting();
+
             foreach (var setting in _defaultSettings)
             {
-                var find = resultDoc.Content.Find;
-                find.ClearFormatting();
-                find.Replacement.ClearFormatting();
                 find.Text = setting.Key;
                 find.Replacement.Text = setting.Value;
 
