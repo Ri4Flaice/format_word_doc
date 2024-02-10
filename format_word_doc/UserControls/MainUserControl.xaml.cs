@@ -3,6 +3,7 @@ using format_word_doc.src.Elements;
 using format_word_doc.WordDoc;
 using format_word_doc.WordDoc.CreateDocument;
 using System;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
@@ -52,10 +53,13 @@ namespace format_word_doc.UserControls
             settingsWindow.ShowDialog();
             Opacity = 1;
         }
-        private void StartBtn_Click(object sender, RoutedEventArgs e)
+        private async void StartBtn_Click(object sender, RoutedEventArgs e)
         {
-            _createDoc.CreateDocument();
-            _formatDocument.Formatting();
+            await Task.Run(() =>
+            {
+                _createDoc.CreateDocument();
+                _formatDocument.Formatting();
+            });
         }
 
         private void SelectAllCheckBox_Checked(object sender, RoutedEventArgs e)

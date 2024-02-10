@@ -14,6 +14,8 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -69,6 +71,7 @@
     <Compile Include="WordDoc\CreateDocument\CreateDoc.cs" />
     <Compile Include="WordDoc\FormatDocument.cs" />
     <Compile Include="WordDoc\SettingsField\SettingDocField.cs" />
+    <Compile Include="WordDoc\TextTransfer\TransferContentDoc.cs" />
     <Compile Include="WordDoc\TitlePage\WorkTitle.cs" />
     <Compile Include="WordManager\WordApplicationManager.cs" />
     <Page Include="MainWindow.xaml">
@@ -156,6 +159,11 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
+      <Version>7.1.3</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
