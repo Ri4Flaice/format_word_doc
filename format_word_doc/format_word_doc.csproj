@@ -70,6 +70,7 @@
     </Compile>
     <Compile Include="WordDoc\CreateDocument\CreateDoc.cs" />
     <Compile Include="WordDoc\FormatDocument.cs" />
+    <Compile Include="WordDoc\FormatStandardControl\FormatHeadlines.cs" />
     <Compile Include="WordDoc\FormatStandardControl\FormatPicture.cs" />
     <Compile Include="WordDoc\FormatStandardControl\FormatText.cs" />
     <Compile Include="WordDoc\SettingsField\SettingDocField.cs" />

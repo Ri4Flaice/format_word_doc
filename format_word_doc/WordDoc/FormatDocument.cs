@@ -14,6 +14,7 @@ namespace format_word_doc.WordDoc
     {
         private WorkTitle _workTitle = new WorkTitle();
         private TransferContentDoc _transferContentDoc = new TransferContentDoc();
+        private FormatHeadlines _formatHeadlines = new FormatHeadlines();
         private FormatText _formatText = new FormatText();
         private FormatPicture _formatPicture = new FormatPicture();
         private SettingDocField _settingDocField = new SettingDocField();
@@ -35,6 +36,7 @@ namespace format_word_doc.WordDoc
 
                 if (Settings.Default.CopyTextCheckBox) { _transferContentDoc.TransferringContentFromOriginalToNewDoc(sourceDoc, wordApp, resultDoc); }
                 if (Settings.Default.CreateTitlePageCheckBox) { _workTitle.CopyTitleOfTheTitleDoc(resultDoc, titleDocPath); _workTitle.ReplaceContentTitlePage(resultDoc); }
+                if (Settings.Default.CreateHeadingCheckBox) { _formatHeadlines.FindTitleInText(resultDoc); }
                 if (Settings.Default.FormattingTextCheckBox) { _formatText.FormattingText(resultDoc, wordApp, 1); }
                 if (Settings.Default.FormattingPictureCheckBox) { _formatPicture.FormattingPicture(resultDoc); }
                 if (Settings.Default.SettingsFieldDocCheckBox) { _settingDocField.SettingUpDocumentFields(wordApp, resultDoc); }
