@@ -1,4 +1,6 @@
-﻿using Word = Microsoft.Office.Interop.Word;
+﻿using System.Collections.Generic;
+using System;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace format_word_doc.WordDoc.FormatStandardControl
 {
@@ -6,11 +8,23 @@ namespace format_word_doc.WordDoc.FormatStandardControl
     {
         public void FormattingText(Word.Document resultDoc, Word.Application wordApp, byte startPage = 0)
         {
+            Dictionary<string, Action<Word.Paragraph>> keyWords = new Dictionary<string, Action<Word.Paragraph>>(StringComparer.InvariantCultureIgnoreCase)
+            {
+                { "ВВЕДЕНИЕ", (paragraph) => { paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter; } },
+                { "ЗАКЛЮЧЕНИЕ", (paragraph) => { paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter; } },
+                { "СПИСОК ИСПОЛЬЗУЕМЫХ ИСТОЧНИКОВ", (paragraph) => { paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter; } },
+                { "СПИСОК ЛИТЕРАТУРЫ", (paragraph) => { paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter; } },
+            };
+
             foreach (Word.Paragraph paragraph in resultDoc.Paragraphs)
             {
                 if (paragraph.Range.Information[Word.WdInformation.wdActiveEndPageNumber] > startPage)
                 {
                     Formatting(paragraph, wordApp, Word.WdParagraphAlignment.wdAlignParagraphJustify);
+                }
+                if (keyWords.ContainsKey(paragraph.Range.Text.Trim()))
+                {
+                    keyWords[paragraph.Range.Text.Trim()].Invoke(paragraph);
                 }
             }
         }
