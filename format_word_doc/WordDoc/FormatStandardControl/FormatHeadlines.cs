@@ -34,7 +34,7 @@ namespace format_word_doc.WordDoc.FormatStandardControl
                     SetStyleHeading(paragraph, Word.WdBuiltinStyle.wdStyleHeading1);
                     AddPageBreakBeforeTitle();
                 }
-                else if (Regex.IsMatch(paragraph.Range.Text, @"^\d\.\d\s"))
+                else if (Regex.IsMatch(paragraph.Range.Text, @"^\d+\.\d+\s"))
                 {
                     SetStyleHeading(paragraph, Word.WdBuiltinStyle.wdStyleHeading2);
                 }

@@ -29,6 +29,20 @@ namespace format_word_doc.WordDoc.FormatStandardControl
             }
         }
 
+        public void FormattingAlignmentCenterTitleAutoclaving(Word.Application wordApp, Word.Document resultDoc)
+        {
+            Word.Range titleAutoclavingRange = resultDoc.Content;
+            titleAutoclavingRange.Find.ClearFormatting();
+            titleAutoclavingRange.Find.Text = "СОДЕРЖАНИЕ";
+            titleAutoclavingRange.Find.Execute();
+
+            if (titleAutoclavingRange.Find.Found)
+            {
+                Word.Paragraph titleParagraph = titleAutoclavingRange.Paragraphs[1];
+                Formatting(titleParagraph, wordApp, Word.WdParagraphAlignment.wdAlignParagraphCenter);
+            }
+        }
+
         private void Formatting(Word.Paragraph paragraph, Word.Application wordApp, Word.WdParagraphAlignment alignment)
         {
             paragraph.Range.Font.Name = "Times New Roman";
