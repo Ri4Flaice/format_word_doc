@@ -25,9 +25,12 @@ namespace format_word_doc.WordDoc.FormatStandardControl
 
                     if (Regex.IsMatch(paragraph.Range.Text, @"^приложение\s*\w", RegexOptions.IgnoreCase))
                     {
-                        paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                        if (paragraph.Range.Information[Word.WdInformation.wdActiveEndPageNumber] > 3)
+                        {
+                            paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                        }
                     }
-                    if (Regex.IsMatch(paragraph.Range.Text, @"^продолжение приложения\s*\w", RegexOptions.IgnoreCase))
+                    else if (Regex.IsMatch(paragraph.Range.Text, @"^продолжение приложения\s*\w", RegexOptions.IgnoreCase))
                     {
                         paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphRight;
                     }
