@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 using Word = Microsoft.Office.Interop.Word;
+using System.Text.RegularExpressions;
 
 namespace format_word_doc.WordDoc.FormatStandardControl
 {
@@ -21,6 +22,15 @@ namespace format_word_doc.WordDoc.FormatStandardControl
                 if (paragraph.Range.Information[Word.WdInformation.wdActiveEndPageNumber] > startPage)
                 {
                     Formatting(paragraph, wordApp, Word.WdParagraphAlignment.wdAlignParagraphJustify);
+
+                    if (Regex.IsMatch(paragraph.Range.Text, @"^приложение\s*\w", RegexOptions.IgnoreCase))
+                    {
+                        paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                    }
+                    if (Regex.IsMatch(paragraph.Range.Text, @"^продолжение приложения\s*\w", RegexOptions.IgnoreCase))
+                    {
+                        paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphRight;
+                    }
                 }
                 if (keyWords.ContainsKey(paragraph.Range.Text.Trim()))
                 {

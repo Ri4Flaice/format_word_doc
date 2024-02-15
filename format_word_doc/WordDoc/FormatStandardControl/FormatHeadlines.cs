@@ -9,10 +9,6 @@ namespace format_word_doc.WordDoc.FormatStandardControl
     {
         private Word.Paragraph _previousParagraphBeforeTitle = null;
 
-        /// <summary>
-        /// Add functionality: find the word APPLICATION and make heading 1 for it
-        /// </summary>
-        /// <param name="resultDoc"></param>
         public void FindTitleInText(Word.Document resultDoc)
         {
             Dictionary<string, Action<Word.Paragraph>> keyWords = new Dictionary<string, Action<Word.Paragraph>>(StringComparer.InvariantCultureIgnoreCase)
@@ -38,6 +34,11 @@ namespace format_word_doc.WordDoc.FormatStandardControl
                 {
                     SetStyleHeading(paragraph, Word.WdBuiltinStyle.wdStyleHeading2);
                 }
+                else if (Regex.IsMatch(paragraph.Range.Text, @"^приложение\s*\w", RegexOptions.IgnoreCase))
+                {
+                    SetStyleHeading(paragraph, Word.WdBuiltinStyle.wdStyleHeading1);
+                    AddPageBreakBeforeTitle();
+                }
 
                 _previousParagraphBeforeTitle = paragraph;
             }
@@ -51,7 +52,7 @@ namespace format_word_doc.WordDoc.FormatStandardControl
         private void AddPageBreakBeforeTitle()
         {
             Word.Range range = _previousParagraphBeforeTitle.Range;
-            range.InsertAfter("\f");
+            range.InsertAfter("\f\n");
         }
     }
 }
