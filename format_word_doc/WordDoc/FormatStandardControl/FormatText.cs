@@ -53,6 +53,9 @@ namespace format_word_doc.WordDoc.FormatStandardControl
             {
                 Word.Paragraph titleParagraph = titleAutoclavingRange.Paragraphs[1];
                 Formatting(titleParagraph, wordApp, Word.WdParagraphAlignment.wdAlignParagraphCenter);
+
+                Word.Paragraph nextParagraph = titleParagraph.Next();
+                Formatting(nextParagraph, wordApp, Word.WdParagraphAlignment.wdAlignParagraphCenter);
             }
         }
 

@@ -8,7 +8,7 @@ namespace format_word_doc.WordDoc.FormatStandardControl
         private FormatText _formatText = new FormatText();
         public void CreateAutoclaving(Word.Application wordApp, Word.Document resultDoc)
         {
-            const string AUTOCLAVINGTITLE = "СОДЕРЖАНИЕ";
+            const string AUTOCLAVINGTITLE = "СОДЕРЖАНИЕ\n";
             Word.Range endOfTitlePage;
 
             if (Settings.Default.CreateTitlePageCheckBox)
