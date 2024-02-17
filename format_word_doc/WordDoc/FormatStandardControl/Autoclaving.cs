@@ -28,12 +28,14 @@ namespace format_word_doc.WordDoc.FormatStandardControl
             Word.Range autoclavingRange = autoclaving.Range;
             Word.Range endOfAutoclaving = resultDoc.Range(autoclavingRange.End, autoclavingRange.End);
 
+            endOfAutoclaving.InsertBreak(Word.WdBreakType.wdSectionBreakNextPage);
+
+            autoclaving.Update();
+            
             foreach (Word.Paragraph paragraph in autoclavingRange.Paragraphs)
             {
                 _formatText.Formatting(paragraph, wordApp, Word.WdParagraphAlignment.wdAlignParagraphJustify);
             }
-
-            endOfAutoclaving.InsertBreak(Word.WdBreakType.wdSectionBreakNextPage);
         }
 
         private Word.Range StartPositionAutoclaving(Word.Document resultDoc, int numberPage)
