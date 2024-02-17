@@ -74,6 +74,7 @@
     <Compile Include="WordDoc\FormatStandardControl\FormatHeadlines.cs" />
     <Compile Include="WordDoc\FormatStandardControl\FormatPicture.cs" />
     <Compile Include="WordDoc\FormatStandardControl\FormatText.cs" />
+    <Compile Include="WordDoc\FormatStandardControl\PageNumbering.cs" />
     <Compile Include="WordDoc\SettingsField\SettingDocField.cs" />
     <Compile Include="WordDoc\TextTransfer\TransferContentDoc.cs" />
     <Compile Include="WordDoc\TitlePage\WorkTitle.cs" />

@@ -56,7 +56,7 @@ namespace format_word_doc.WordDoc.FormatStandardControl
             }
         }
 
-        private void Formatting(Word.Paragraph paragraph, Word.Application wordApp, Word.WdParagraphAlignment alignment)
+        public void Formatting(Word.Paragraph paragraph, Word.Application wordApp, Word.WdParagraphAlignment alignment)
         {
             paragraph.Range.Font.Name = "Times New Roman";
             paragraph.Range.Font.Size = 14;

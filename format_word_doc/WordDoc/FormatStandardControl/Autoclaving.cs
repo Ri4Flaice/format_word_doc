@@ -5,7 +5,8 @@ namespace format_word_doc.WordDoc.FormatStandardControl
 {
     internal class Autoclaving
     {
-        public void CreateAutoclaving(Word.Document resultDoc)
+        private FormatText _formatText = new FormatText();
+        public void CreateAutoclaving(Word.Application wordApp, Word.Document resultDoc)
         {
             const string AUTOCLAVINGTITLE = "СОДЕРЖАНИЕ";
             Word.Range endOfTitlePage;
@@ -26,6 +27,11 @@ namespace format_word_doc.WordDoc.FormatStandardControl
             Word.TableOfContents autoclaving = resultDoc.TablesOfContents.Add(startOfAutoclaving, UseHyperlinks: true, UseOutlineLevels: true);
             Word.Range autoclavingRange = autoclaving.Range;
             Word.Range endOfAutoclaving = resultDoc.Range(autoclavingRange.End, autoclavingRange.End);
+
+            foreach (Word.Paragraph paragraph in autoclavingRange.Paragraphs)
+            {
+                _formatText.Formatting(paragraph, wordApp, Word.WdParagraphAlignment.wdAlignParagraphJustify);
+            }
 
             endOfAutoclaving.InsertBreak(Word.WdBreakType.wdSectionBreakNextPage);
         }
