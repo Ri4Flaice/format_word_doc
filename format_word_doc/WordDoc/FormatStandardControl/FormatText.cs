@@ -38,6 +38,11 @@ namespace format_word_doc.WordDoc.FormatStandardControl
                 if (keyWords.ContainsKey(paragraph.Range.Text.Trim()))
                 {
                     keyWords[paragraph.Range.Text.Trim()].Invoke(paragraph);
+
+                    if (!string.IsNullOrWhiteSpace(paragraph.Next().Range.Text))
+                    {
+                        paragraph.Range.InsertParagraphAfter();
+                    }
                 }
             }
         }
