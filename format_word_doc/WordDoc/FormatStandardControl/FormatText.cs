@@ -7,7 +7,7 @@ namespace format_word_doc.WordDoc.FormatStandardControl
 {
     internal class FormatText
     {
-        public void FormattingText(Word.Document resultDoc, Word.Application wordApp, byte startPage = 0)
+        public void FormattingText(Word.Document resultDoc, Word.Application wordApp, int startPage = 0)
         {
             Dictionary<string, Action<Word.Paragraph>> keyWords = new Dictionary<string, Action<Word.Paragraph>>(StringComparer.InvariantCultureIgnoreCase)
             {

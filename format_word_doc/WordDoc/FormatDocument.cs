@@ -41,7 +41,7 @@ namespace format_word_doc.WordDoc
                 if (Settings.Default.CreateTitlePageCheckBox) { _workTitle.CopyTitleOfTheTitleDoc(resultDoc, titleDocPath); _workTitle.ReplaceContentTitlePage(resultDoc); startNumberPage++; }
                 if (Settings.Default.CreateHeadingCheckBox) { _formatHeadlines.FindTitleInText(resultDoc); }
                 
-                if (Settings.Default.FormattingTextCheckBox) { _formatText.FormattingText(resultDoc, wordApp, 1); }
+                if (Settings.Default.FormattingTextCheckBox) { _formatText.FormattingText(resultDoc, wordApp, startNumberPage); }
                 if (Settings.Default.FormattingPictureCheckBox) { _formatPicture.FormattingPicture(resultDoc); }
                 
                 if (Settings.Default.CreateAutoclavingCheckBox) { _autoclaving.CreateAutoclaving(wordApp, resultDoc); startNumberPage++; }
