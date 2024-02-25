@@ -17,6 +17,7 @@ namespace format_word_doc.WordDoc
         private FormatHeadlines _formatHeadlines = new FormatHeadlines();
         private Autoclaving _autoclaving = new Autoclaving();
         private FormatText _formatText = new FormatText();
+        private FormatTable _formatTable = new FormatTable();
         private FormatPicture _formatPicture = new FormatPicture();
         private SettingDocField _settingDocField = new SettingDocField();
         private PageNumbering _pageNumbering = new PageNumbering();
@@ -41,13 +42,14 @@ namespace format_word_doc.WordDoc
                 if (Settings.Default.CreateTitlePageCheckBox) { _workTitle.CopyTitleOfTheTitleDoc(resultDoc, titleDocPath); _workTitle.ReplaceContentTitlePage(resultDoc); startNumberPage++; }
                 if (Settings.Default.CreateHeadingCheckBox) { _formatHeadlines.FindTitleInText(resultDoc); }
                 
-                if (Settings.Default.FormattingTextCheckBox) { _formatText.FormattingText(resultDoc, wordApp, startNumberPage); }
+                if (Settings.Default.FormattingTextCheckBox) { _formatText.FormattingText(resultDoc, wordApp, startNumberPage); _formatTable.FormattingCellsAlignmentCenter(wordApp, resultDoc); }
                 if (Settings.Default.FormattingPictureCheckBox) { _formatPicture.FormattingPicture(resultDoc); }
+                
+                if (Settings.Default.SettingsFieldDocCheckBox) { _settingDocField.SettingUpDocumentFields(wordApp, resultDoc); }
                 
                 if (Settings.Default.CreateAutoclavingCheckBox) { _autoclaving.CreateAutoclaving(wordApp, resultDoc); startNumberPage++; }
                 if (Settings.Default.CreateAutoclavingCheckBox) { _formatText.FormattingAlignmentCenterTitleAutoclaving(wordApp, resultDoc); }
                 
-                if (Settings.Default.SettingsFieldDocCheckBox) { _settingDocField.SettingUpDocumentFields(wordApp, resultDoc); }
                 if (Settings.Default.PageNumberingCheckBox) { _pageNumbering.CreatePageNumber(resultDoc, startNumberPage); }
 
                 resultDoc.Save();

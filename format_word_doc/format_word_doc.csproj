@@ -73,6 +73,7 @@
     <Compile Include="WordDoc\FormatStandardControl\Autoclaving.cs" />
     <Compile Include="WordDoc\FormatStandardControl\FormatHeadlines.cs" />
     <Compile Include="WordDoc\FormatStandardControl\FormatPicture.cs" />
+    <Compile Include="WordDoc\FormatStandardControl\FormatTable.cs" />
     <Compile Include="WordDoc\FormatStandardControl\FormatText.cs" />
     <Compile Include="WordDoc\FormatStandardControl\PageNumbering.cs" />
     <Compile Include="WordDoc\SettingsField\SettingDocField.cs" />
