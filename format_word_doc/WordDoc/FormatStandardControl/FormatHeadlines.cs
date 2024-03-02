@@ -11,7 +11,7 @@ namespace format_word_doc.WordDoc.FormatStandardControl
 
         public void FindTitleInText(Word.Document resultDoc)
         {
-            Dictionary<string, Action<Word.Paragraph>> keyWords = new Dictionary<string, Action<Word.Paragraph>>(StringComparer.InvariantCultureIgnoreCase)
+            Dictionary<string, Action<Word.Paragraph>> titles = new Dictionary<string, Action<Word.Paragraph>>(StringComparer.InvariantCultureIgnoreCase)
             {
                 { "ВВЕДЕНИЕ", (paragraph) => SetStyleHeading(paragraph, Word.WdBuiltinStyle.wdStyleHeading1) },
                 { "ЗАКЛЮЧЕНИЕ", (paragraph) => { SetStyleHeading(paragraph, Word.WdBuiltinStyle.wdStyleHeading1); AddPageBreakBeforeTitle(); } },
@@ -21,9 +21,9 @@ namespace format_word_doc.WordDoc.FormatStandardControl
 
             foreach (Word.Paragraph paragraph in resultDoc.Paragraphs)
             {
-                if (keyWords.ContainsKey(paragraph.Range.Text.Trim()))
+                if (titles.ContainsKey(paragraph.Range.Text.Trim()))
                 {
-                    keyWords[paragraph.Range.Text.Trim()].Invoke(paragraph);
+                    titles[paragraph.Range.Text.Trim()].Invoke(paragraph);
                 }
                 else if (Regex.IsMatch(paragraph.Range.Text, @"^\d\s"))
                 {

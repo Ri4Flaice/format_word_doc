@@ -7,9 +7,9 @@ namespace format_word_doc.WordDoc.FormatStandardControl
 {
     internal class FormatText
     {
-        public void FormattingText(Word.Document resultDoc, Word.Application wordApp, int startPage = 0)
+        public void FormattingText(Word.Document resultDoc, Word.Application wordApp)
         {
-            Dictionary<string, Action<Word.Paragraph>> keyWords = new Dictionary<string, Action<Word.Paragraph>>(StringComparer.InvariantCultureIgnoreCase)
+            Dictionary<string, Action<Word.Paragraph>> titles = new Dictionary<string, Action<Word.Paragraph>>(StringComparer.InvariantCultureIgnoreCase)
             {
                 { "ВВЕДЕНИЕ", (paragraph) => { paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter; } },
                 { "ЗАКЛЮЧЕНИЕ", (paragraph) => { paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter; } },
@@ -17,32 +17,43 @@ namespace format_word_doc.WordDoc.FormatStandardControl
                 { "СПИСОК ЛИТЕРАТУРЫ", (paragraph) => { paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter; } },
             };
 
-            foreach (Word.Paragraph paragraph in resultDoc.Paragraphs)
+            Word.Range ContentRange = resultDoc.Content;
+            Formatting(ContentRange, wordApp, Word.WdParagraphAlignment.wdAlignParagraphThaiJustify);
+            
+            foreach (var title in titles)
             {
-                if (paragraph.Range.Information[Word.WdInformation.wdActiveEndPageNumber] > startPage)
-                {
-                    Formatting(paragraph, wordApp, Word.WdParagraphAlignment.wdAlignParagraphJustify);
+                ContentRange.Find.ClearFormatting();
+                ContentRange.Find.Text = title.Key;
+                ContentRange.Find.MatchCase = false;
+                ContentRange.Find.MatchWholeWord = true;
+                ContentRange.Find.MatchWildcards = false;
 
-                    if (Regex.IsMatch(paragraph.Range.Text, @"^приложение\s*\w", RegexOptions.IgnoreCase))
-                    {
-                        if (paragraph.Range.Information[Word.WdInformation.wdActiveEndPageNumber] > 3)
-                        {
-                            paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
-                        }
-                    }
-                    else if (Regex.IsMatch(paragraph.Range.Text, @"^продолжение приложения\s*\w", RegexOptions.IgnoreCase))
-                    {
-                        paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphRight;
-                    }
-                }
-                if (keyWords.ContainsKey(paragraph.Range.Text.Trim()))
+                while (ContentRange.Find.Execute())
                 {
-                    keyWords[paragraph.Range.Text.Trim()].Invoke(paragraph);
-
-                    if (!string.IsNullOrWhiteSpace(paragraph.Next().Range.Text))
+                    Word.Paragraph paragraph = ContentRange.Paragraphs[1];
+                    Word.Paragraph paragraphNext = paragraph.Next();
+                    title.Value.Invoke(paragraph);
+                    ContentRange.Collapse(Word.WdCollapseDirection.wdCollapseEnd);
+                    
+                    if (!string.IsNullOrWhiteSpace(paragraphNext.Range.Text))
                     {
                         paragraph.Range.InsertParagraphAfter();
                     }
+                }
+            }
+        }
+
+        public void AlignmentCenterWordsApplication(Word.Document resultDoc)
+        {
+            foreach(Word.Paragraph paragraph in resultDoc.Paragraphs)
+            {
+                if (Regex.IsMatch(paragraph.Range.Text, @"^приложение\s*\w", RegexOptions.IgnoreCase))
+                {
+                    paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                }
+                else if (Regex.IsMatch(paragraph.Range.Text, @"^продолжение приложения\s*\w", RegexOptions.IgnoreCase))
+                {
+                    paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphRight;
                 }
             }
         }
@@ -76,6 +87,20 @@ namespace format_word_doc.WordDoc.FormatStandardControl
             paragraph.Format.SpaceBefore = 0;
             paragraph.Format.SpaceAfter = 0;
             paragraph.Space1();
+        }
+
+        private void Formatting(Word.Range range, Word.Application wordApp, Word.WdParagraphAlignment alignment)
+        {
+            range.Font.Name = "Times New Roman";
+            range.Font.Size = 14;
+            range.Font.Color = Word.WdColor.wdColorBlack;
+            range.ParagraphFormat.Alignment = alignment;
+            range.ParagraphFormat.LeftIndent = 0;
+            range.ParagraphFormat.RightIndent = 0;
+            range.ParagraphFormat.FirstLineIndent = wordApp.CentimetersToPoints(1.5f);
+            range.ParagraphFormat.SpaceBefore = 0;
+            range.ParagraphFormat.SpaceAfter = 0;
+            range.ParagraphFormat.Space1();
         }
     }
 }

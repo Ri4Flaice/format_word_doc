@@ -39,10 +39,16 @@ namespace format_word_doc.WordDoc
                 resultDoc = wordApp.Documents.Open(resultDocPath);
 
                 if (Settings.Default.CopyTextCheckBox) { _transferContentDoc.TransferringContentFromOriginalToNewDoc(sourceDoc, wordApp, resultDoc); }
-                if (Settings.Default.CreateTitlePageCheckBox) { _workTitle.CopyTitleOfTheTitleDoc(resultDoc, titleDocPath); _workTitle.ReplaceContentTitlePage(resultDoc); startNumberPage++; }
                 if (Settings.Default.CreateHeadingCheckBox) { _formatHeadlines.FindTitleInText(resultDoc); }
                 
-                if (Settings.Default.FormattingTextCheckBox) { _formatText.FormattingText(resultDoc, wordApp, startNumberPage); _formatTable.FormattingCellsAlignmentCenter(wordApp, resultDoc); }
+                if (Settings.Default.FormattingTextCheckBox) { 
+                    _formatText.FormattingText(resultDoc, wordApp); 
+                    _formatTable.FormattingCellsAlignmentCenter(wordApp, resultDoc);
+                    _formatText.AlignmentCenterWordsApplication(resultDoc);
+                }
+                
+                if (Settings.Default.CreateTitlePageCheckBox) { _workTitle.CopyTitleOfTheTitleDoc(resultDoc, titleDocPath); _workTitle.ReplaceContentTitlePage(resultDoc); startNumberPage++; }
+                
                 if (Settings.Default.FormattingPictureCheckBox) { _formatPicture.FormattingPicture(resultDoc); }
                 
                 if (Settings.Default.SettingsFieldDocCheckBox) { _settingDocField.SettingUpDocumentFields(wordApp, resultDoc); }
