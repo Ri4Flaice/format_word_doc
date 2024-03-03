@@ -10,12 +10,12 @@ namespace format_word_doc.src.CreateDirecoty
         {
             try
             {
-                string exeDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                string documentsDirectory = Path.Combine(exeDirectory, "Documents");
+                string exeDirectoryPath = AppDomain.CurrentDomain.BaseDirectory;
+                string documentsDirectoryPath = Path.Combine(exeDirectoryPath, "Documents");
 
-                if (!Directory.Exists(documentsDirectory))
+                if (!Directory.Exists(documentsDirectoryPath))
                 {
-                    Directory.CreateDirectory(documentsDirectory);
+                    Directory.CreateDirectory(documentsDirectoryPath);
                 }
             }
             catch (Exception ex)

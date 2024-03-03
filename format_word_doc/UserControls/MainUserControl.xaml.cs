@@ -17,12 +17,14 @@ namespace format_word_doc.UserControls
         private bool _isMenuOpen = false;
         private DirectoryDocuments _directoryDocuments;
         private CreateDoc _createDoc;
+        private CreateTitleDoc _createTitleDoc;
         private FormatDocument _formatDocument;
         public MainUserControl()
         {
             InitializeComponent();
             _directoryDocuments = new DirectoryDocuments();
             _createDoc = new CreateDoc();
+            _createTitleDoc = new CreateTitleDoc();
             _formatDocument = new FormatDocument();
         }
 
@@ -62,6 +64,7 @@ namespace format_word_doc.UserControls
             await Task.Run(() =>
             {
                 _directoryDocuments.CreateDirectoryDocuments();
+                _createTitleDoc.CreateTitleDocument();
                 _createDoc.CreateDocument();
                 _formatDocument.Formatting();
 

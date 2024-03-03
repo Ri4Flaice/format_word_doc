@@ -73,7 +73,7 @@ namespace format_word_doc.WordDoc.FormatStandardControl
             paragraph.Space1();
         }
 
-        private void Formatting(Word.Range range, Word.Application wordApp, Word.WdParagraphAlignment alignment)
+        public void Formatting(Word.Range range, Word.Application wordApp, Word.WdParagraphAlignment alignment)
         {
             range.Font.Name = "Times New Roman";
             range.Font.Size = 14;
