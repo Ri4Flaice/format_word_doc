@@ -15,7 +15,7 @@ namespace format_word_doc.WordDoc.CreateDocument
             try
             {
                 string exeDirectoryPath = AppDomain.CurrentDomain.BaseDirectory;
-                string titleDocumentPath = Path.Combine(exeDirectoryPath, "Documents/title.docx");
+                string titleDocumentPath = Path.Combine(exeDirectoryPath, "Documents/Title.docx");
 
                 if (!File.Exists(titleDocumentPath))
                 {
@@ -41,8 +41,14 @@ namespace format_word_doc.WordDoc.CreateDocument
             }
             finally
             {
-                titleDoc.Close();
-                wordApp.Quit();
+                if (titleDoc != null)
+                {
+                    titleDoc.Close();
+                }
+                if (wordApp != null)
+                {
+                    wordApp.Quit();
+                }
             }
         }
 

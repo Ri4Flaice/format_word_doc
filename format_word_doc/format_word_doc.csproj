@@ -61,7 +61,7 @@
     <Compile Include="SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="src\CreateDirecoty\DirectoryDocuments.cs" />
+    <Compile Include="src\CreateDirecory\DirectoryDocuments.cs" />
     <Compile Include="src\Elements\BackgroundTextBox.cs" />
     <Compile Include="UserControls\MainUserControl.xaml.cs">
       <DependentUpon>MainUserControl.xaml</DependentUpon>

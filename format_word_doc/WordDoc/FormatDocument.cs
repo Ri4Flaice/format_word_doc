@@ -6,6 +6,8 @@ using format_word_doc.WordDoc.TextTransfer;
 using format_word_doc.WordDoc.TitlePage;
 using format_word_doc.WordManager;
 using System;
+using System.IO;
+using System.Windows;
 using Word = Microsoft.Office.Interop.Word;
 
 namespace format_word_doc.WordDoc
@@ -30,9 +32,9 @@ namespace format_word_doc.WordDoc
                 string exeFolderPath = AppDomain.CurrentDomain.BaseDirectory;
                 int startNumberPage = 0;
 
-                string titleDocPath = System.IO.Path.Combine(exeFolderPath, "Documents/Title.docx");
-                string sourceDocPath = System.IO.Path.Combine(exeFolderPath, "Documents/source.docx");
-                string resultDocPath = System.IO.Path.Combine(exeFolderPath, "Documents/result.docx");
+                string titleDocPath = Path.Combine(exeFolderPath, "Documents\\Title.docx");
+                string resultDocPath = Path.Combine(exeFolderPath, "Documents\\result.docx");
+                string sourceDocPath = SourceFilePath(exeFolderPath, titleDocPath, resultDocPath);
 
                 titleDoc = wordApp.Documents.Open(titleDocPath);
                 sourceDoc = wordApp.Documents.Open(sourceDocPath);
@@ -71,6 +73,28 @@ namespace format_word_doc.WordDoc
                 resultDoc.Close();
                 wordApp.Quit();
             }
+        }
+
+        private string SourceFilePath(string exeDirectoryPath, string titleDocumentPath, string resultDocumentPath)
+        {
+            string[] files = Directory.GetFiles(Path.Combine(exeDirectoryPath, "Documents"));
+            string sourceDocumentPath = null;
+
+            if (files.Length != 3)
+            {
+                MessageBox.Show("В директории должно быть ровно три файла\nДля корректной работы");
+            }
+
+            foreach (string file in files)
+            {
+                if (file != titleDocumentPath && file != resultDocumentPath)
+                {
+                    sourceDocumentPath = file;
+                    break;
+                }
+            }
+
+            return sourceDocumentPath;
         }
     }
 }

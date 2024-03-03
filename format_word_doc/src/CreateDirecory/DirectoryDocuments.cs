@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace format_word_doc.src.CreateDirecoty
+namespace format_word_doc.src.CreateDirecory
 {
     internal class DirectoryDocuments
     {
