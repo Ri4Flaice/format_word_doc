@@ -1,4 +1,5 @@
 ﻿using format_word_doc.Properties;
+using format_word_doc.src.CreateDirecoty;
 using format_word_doc.WordDoc;
 using format_word_doc.WordDoc.CreateDocument;
 using Microsoft.Toolkit.Uwp.Notifications;
@@ -14,11 +15,13 @@ namespace format_word_doc.UserControls
     public partial class MainUserControl : UserControl
     {
         private bool _isMenuOpen = false;
+        private DirectoryDocuments _directoryDocuments;
         private CreateDoc _createDoc;
         private FormatDocument _formatDocument;
         public MainUserControl()
         {
             InitializeComponent();
+            _directoryDocuments = new DirectoryDocuments();
             _createDoc = new CreateDoc();
             _formatDocument = new FormatDocument();
         }
@@ -58,6 +61,7 @@ namespace format_word_doc.UserControls
         {
             await Task.Run(() =>
             {
+                _directoryDocuments.CreateDirectoryDocuments();
                 _createDoc.CreateDocument();
                 _formatDocument.Formatting();
 
