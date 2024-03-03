@@ -61,21 +61,35 @@ namespace format_word_doc.UserControls
         }
         private async void StartBtn_Click(object sender, RoutedEventArgs e)
         {
-            await Task.Run(() =>
+            ((TextBlock)StartBtn.Content).Text = "Работаем...";
+            StartBtn.IsEnabled = false;
+
+            try
             {
-                _directoryDocuments.CreateDirectoryDocuments();
-                _createTitleDoc.CreateTitleDocument();
-                _createDoc.CreateDocument();
-                _formatDocument.Formatting();
+                await Task.Run(() =>
+                {
+                    _directoryDocuments.CreateDirectoryDocuments();
+                    _createTitleDoc.CreateTitleDocument();
+                    _createDoc.CreateDocument();
+                    _formatDocument.Formatting();
 
-                Thread.Sleep(1500);
+                    Thread.Sleep(1500);
 
-                new ToastContentBuilder()
-                    .AddArgument("action", "viewConversation")
-                    .AddArgument("conversationId", 9813)
-                    .AddText("Formatting of the document is completed")
-                    .Show();
-            });
+                    new ToastContentBuilder()
+                        .AddArgument("action", "viewConversation")
+                        .AddArgument("conversationId", 9813)
+                        .AddText("Formatting of the document is completed")
+                        .Show();
+                });
+            }
+            finally
+            {
+                StartBtn.Dispatcher.Invoke(() =>
+                {
+                    StartBtn.IsEnabled = true;
+                    ((TextBlock)StartBtn.Content).Text = "Старт";
+                });
+            }
         }
 
         private void SelectAllCheckBox_Checked(object sender, RoutedEventArgs e)
