@@ -1,5 +1,4 @@
 ﻿using format_word_doc.Properties;
-using format_word_doc.src.Elements;
 using format_word_doc.WordDoc;
 using format_word_doc.WordDoc.CreateDocument;
 using Microsoft.Toolkit.Uwp.Notifications;

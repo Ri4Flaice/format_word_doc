@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using Word = Microsoft.Office.Interop.Word;
-using System.Text.RegularExpressions;
 
 namespace format_word_doc.WordDoc.FormatStandardControl
 {
@@ -39,21 +38,6 @@ namespace format_word_doc.WordDoc.FormatStandardControl
                     {
                         paragraph.Range.InsertParagraphAfter();
                     }
-                }
-            }
-        }
-
-        public void AlignmentCenterWordsApplication(Word.Document resultDoc)
-        {
-            foreach(Word.Paragraph paragraph in resultDoc.Paragraphs)
-            {
-                if (Regex.IsMatch(paragraph.Range.Text, @"^приложение\s*\w", RegexOptions.IgnoreCase))
-                {
-                    paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
-                }
-                else if (Regex.IsMatch(paragraph.Range.Text, @"^продолжение приложения\s*\w", RegexOptions.IgnoreCase))
-                {
-                    paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphRight;
                 }
             }
         }

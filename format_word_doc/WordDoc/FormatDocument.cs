@@ -44,7 +44,7 @@ namespace format_word_doc.WordDoc
                 if (Settings.Default.FormattingTextCheckBox) { 
                     _formatText.FormattingText(resultDoc, wordApp); 
                     _formatTable.FormattingCellsAlignmentCenter(wordApp, resultDoc);
-                    _formatText.AlignmentCenterWordsApplication(resultDoc);
+                    _formatHeadlines.AlignmentCenterWordsApplication(resultDoc);
                 }
                 
                 if (Settings.Default.CreateTitlePageCheckBox) { _workTitle.CopyTitleOfTheTitleDoc(resultDoc, titleDocPath); _workTitle.ReplaceContentTitlePage(resultDoc); startNumberPage++; }

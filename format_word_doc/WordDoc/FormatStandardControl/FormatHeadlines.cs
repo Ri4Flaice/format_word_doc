@@ -44,6 +44,21 @@ namespace format_word_doc.WordDoc.FormatStandardControl
             }
         }
 
+        public void AlignmentCenterWordsApplication(Word.Document resultDoc)
+        {
+            foreach (Word.Paragraph paragraph in resultDoc.Paragraphs)
+            {
+                if (Regex.IsMatch(paragraph.Range.Text, @"^приложение\s*\w", RegexOptions.IgnoreCase))
+                {
+                    paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                }
+                else if (Regex.IsMatch(paragraph.Range.Text, @"^продолжение приложения\s*\w", RegexOptions.IgnoreCase))
+                {
+                    paragraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphRight;
+                }
+            }
+        }
+
         private void SetStyleHeading(Word.Paragraph paragraph, Word.WdBuiltinStyle styleHeading)
         {
             paragraph.set_Style(styleHeading);
