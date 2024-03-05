@@ -83,6 +83,7 @@ namespace format_word_doc.WordDoc
             if (files.Length != 3)
             {
                 MessageBox.Show("В директории должно быть ровно три файла\nДля корректной работы");
+                Environment.Exit(0);
             }
 
             foreach (string file in files)
