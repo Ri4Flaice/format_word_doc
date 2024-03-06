@@ -31,12 +31,6 @@ Note:
 ### Requirements
 - .NET Framework 4.8 or higher
 - Microsoft Word 16.0 Object Library version 8.7 (recommend)
-- Microsoft.Toolkit.Uwp.Notifications 7.1.3 or higher
-
-### Installing the notification package
-To install Microsoft.Toolkit.Up.Notifications allows you to manage NuGet packages
 
 ### Installing links 
 Install the link to Microsoft Word in the reference manager. Find Microsoft Word 16.0 Object Library (versions may vary). Version 8.7 was used for this project.
-
-### 
