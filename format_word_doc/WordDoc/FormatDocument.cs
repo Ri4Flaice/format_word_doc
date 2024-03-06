@@ -77,22 +77,28 @@ namespace format_word_doc.WordDoc
 
         private string SourceFilePath(string exeDirectoryPath, string titleDocumentPath, string resultDocumentPath)
         {
-            string[] files = Directory.GetFiles(Path.Combine(exeDirectoryPath, "Documents"));
+            string[] files = Directory.GetFiles(Path.Combine(exeDirectoryPath, "Documents"), "*.docx");
             string sourceDocumentPath = null;
 
             if (files.Length != 3)
             {
-                MessageBox.Show("В директории должно быть ровно три файла\nДля корректной работы");
+                MessageBox.Show("В директории должно быть ровно три Word файла\nДля корректной работы");
                 Environment.Exit(0);
             }
 
             foreach (string file in files)
             {
-                if (file != titleDocumentPath && file != resultDocumentPath)
+                if (file != titleDocumentPath && file != resultDocumentPath && Path.GetExtension(file) == ".docx")
                 {
                     sourceDocumentPath = file;
                     break;
                 }
+            }
+
+            if (sourceDocumentPath == null)
+            {
+                MessageBox.Show("Не найден файл с расширением .docx");
+                Environment.Exit(0);
             }
 
             return sourceDocumentPath;
